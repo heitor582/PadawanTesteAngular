@@ -1,7 +1,8 @@
+import { AlbumService } from './../../core/services/albumService/album.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlbumsComponent } from './albums.component';
-import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
@@ -10,6 +11,8 @@ describe('AlbumsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AlbumsComponent],
+      imports: [HttpClientTestingModule],
+      providers: [AlbumService],
     }).compileComponents();
   }));
 
@@ -21,11 +24,6 @@ describe('AlbumsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should create 100 albums cell', () => {
     fixture.detectChanges();
-    let cell = fixture.debugElement.query(By.css('.cell')).nativeElement;
-    expect(cell.length).toEqual(100);
   });
 });

@@ -1,6 +1,8 @@
+import { TodoService } from './../../core/services/todoService/todo.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodosComponent } from './todos.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TodosComponent', () => {
   let component: TodosComponent;
@@ -8,9 +10,10 @@ describe('TodosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodosComponent ]
-    })
-    .compileComponents();
+      declarations: [TodosComponent],
+      imports: [HttpClientTestingModule],
+      providers: [TodoService],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

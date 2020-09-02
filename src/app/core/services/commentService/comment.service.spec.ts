@@ -17,8 +17,8 @@ describe('CommentService', () => {
       imports: [HttpClientTestingModule],
       providers: [CommentsService],
     });
-    httpClient = TestBed.get(HttpClient);
-    httpTestingController = TestBed.get(HttpTestingController);
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   it('should be created', inject(
@@ -29,7 +29,7 @@ describe('CommentService', () => {
   ));
 
   it('should have getData function', () => {
-    service = TestBed.get(CommentsService);
+    service = TestBed.inject(CommentsService);
     expect(service.reqComments).toBeTruthy();
   });
 });
