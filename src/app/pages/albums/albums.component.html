@@ -1,0 +1,13 @@
+<mat-card>
+  <section class="table">
+    <div *ngFor="let albums of albums" class="cell">
+      <div class="ids">
+        <label>UserId: {{ albums.userId }}</label>
+        <label>Id: {{ albums.id }}</label>
+      </div>
+      <div class="body">
+        <h3>{{ albums.title | titlecase }}</h3>
+      </div>
+    </div>
+  </section>
+</mat-card>

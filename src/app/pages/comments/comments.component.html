@@ -1,0 +1,15 @@
+<mat-card>
+  <section class="table">
+    <div *ngFor="let comment of comments" class="cell">
+      <div class="ids">
+        <label>postId: {{ comment.postId }}</label>
+        <label>Id: {{ comment.id }}</label>
+      </div>
+      <div class="body">
+        <h3>{{ comment.name | titlecase }}</h3>
+        <p>{{ comment.body }}</p>
+        <label>Att: {{ comment.email }}</label>
+      </div>
+    </div>
+  </section>
+</mat-card>
