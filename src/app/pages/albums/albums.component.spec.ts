@@ -24,6 +24,7 @@ describe('AlbumsComponent', () => {
   });
 
   it('should create 100 albums cell', () => {
+    fixture.detectChanges();
     let cell = fixture.debugElement.query(By.css('.cell')).nativeElement;
     expect(cell.length).toEqual(100);
   });
