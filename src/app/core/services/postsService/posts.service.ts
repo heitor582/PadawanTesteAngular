@@ -4,12 +4,15 @@ import { Observable } from 'rxjs';
 import PostsI from '../../models/posts.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsService {
   baseUrl = 'http://jsonplaceholder.typicode.com/posts';
   constructor(private http: HttpClient) {}
   reqPosts(): Observable<PostsI[]> {
     return this.http.get<PostsI[]>(this.baseUrl);
+  }
+  cadastrarPost(newPost: PostsI): Observable<PostsI> {
+    return this.http.post<PostsI>(this.baseUrl, newPost);
   }
 }

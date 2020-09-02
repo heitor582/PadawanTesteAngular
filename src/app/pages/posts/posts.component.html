@@ -1,5 +1,6 @@
 <mat-card>
   <section class="table">
+    <button mat-button (click)="RouteNovoPost()">Novo Post</button>
     <div *ngFor="let posts of posts" class="cell">
       <div class="ids">
         <label>userId: {{ posts.postId }}</label>
@@ -8,7 +9,6 @@
       <div class="body">
         <h3>{{ posts.name | titlecase }}</h3>
         <p>{{ posts.body }}</p>
-
       </div>
     </div>
   </section>
