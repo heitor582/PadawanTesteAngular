@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { CommentsComponent } from './pages/comments/comments.component';
+import { PostsComponent } from './pages/posts/posts.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'albums',
     component: AlbumsComponent,
+  },
+  {
+    path: 'postagens',
+    component: PostsComponent,
   },
 ];
 

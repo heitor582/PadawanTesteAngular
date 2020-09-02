@@ -23,9 +23,9 @@ describe('TodoService', () => {
   it('should be created', inject([TodoService], (service: TodoService) => {
     expect(service).toBeTruthy();
   }));
-  
+
   it('should have getData function', () => {
-    const service: TodoService = TestBed.get(TodoService);
+    service = TestBed.get(TodoService);
     expect(service.reqTodos).toBeTruthy();
   });
 });

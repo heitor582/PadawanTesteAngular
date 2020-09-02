@@ -27,7 +27,7 @@ describe('CommentService', () => {
       expect(service).toBeTruthy();
     }
   ));
-  
+
   it('should have getData function', () => {
     service = TestBed.get(CommentsService);
     expect(service.reqComments).toBeTruthy();
