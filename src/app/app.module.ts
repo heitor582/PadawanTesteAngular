@@ -10,9 +10,7 @@ import { CommentsComponent } from './pages/comments/comments.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { PostsComponent } from './pages/posts/posts.component';
-import { SidenavComponent } from './core/template/sidenav/sidenav.component';
 import { MaterialModule } from './core/material.module';
-import { SidenavListComponent } from './core/template/sidenav/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +21,6 @@ import { SidenavListComponent } from './core/template/sidenav/sidenav-list/siden
     HomeComponent,
     TodosComponent,
     PostsComponent,
-    SidenavComponent,
-    SidenavListComponent,
   ],
   imports: [
     MaterialModule,
