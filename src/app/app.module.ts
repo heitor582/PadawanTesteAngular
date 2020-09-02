@@ -13,9 +13,10 @@ import { AlbumsComponent } from './pages/albums/albums.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TodosComponent } from './pages/todos/todos.component';
+import { PostsComponent } from './pages/posts/posts.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, AlbumsComponent, CommentsComponent, HomeComponent, TodosComponent],
+  declarations: [AppComponent, HeaderComponent, AlbumsComponent, CommentsComponent, HomeComponent, TodosComponent, PostsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

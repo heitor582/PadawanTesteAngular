@@ -1,0 +1,15 @@
+<mat-card>
+  <section class="table">
+    <div *ngFor="let posts of posts" class="cell">
+      <div class="ids">
+        <label>userId: {{ posts.postId }}</label>
+        <label>Id: {{ posts.id }}</label>
+      </div>
+      <div class="body">
+        <h3>{{ posts.name | titlecase }}</h3>
+        <p>{{ posts.body }}</p>
+
+      </div>
+    </div>
+  </section>
+</mat-card>
