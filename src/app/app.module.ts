@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { MaterialModule } from './core/material.module';
+import { ThemeService } from './core/services/theme/theme.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MaterialModule } from './core/material.module';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
