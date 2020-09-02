@@ -17,8 +17,8 @@ describe('AlbumService', () => {
       imports: [HttpClientTestingModule],
       providers: [AlbumService],
     });
-    httpClient = TestBed.get(HttpClient);
-    httpTestingController = TestBed.get(HttpTestingController);
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   it('should be created', inject([AlbumService], (service: AlbumService) => {
@@ -26,7 +26,7 @@ describe('AlbumService', () => {
   }));
 
   it('should have getData function', () => {
-    service = TestBed.get(AlbumService);
+    service = TestBed.inject(AlbumService);
     expect(service.reqAlbums).toBeTruthy();
   });
 });

@@ -16,8 +16,8 @@ describe('TodoService', () => {
       imports: [HttpClientTestingModule],
       providers: [TodoService],
     });
-    httpClient = TestBed.get(HttpClient);
-    httpTestingController = TestBed.get(HttpTestingController);
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   it('should be created', inject([TodoService], (service: TodoService) => {
@@ -25,7 +25,7 @@ describe('TodoService', () => {
   }));
 
   it('should have getData function', () => {
-    service = TestBed.get(TodoService);
+    service = TestBed.inject(TodoService);
     expect(service.reqTodos).toBeTruthy();
   });
 });

@@ -17,6 +17,8 @@ describe('PostsService', () => {
       providers: [PostsService],
     });
     service = TestBed.inject(PostsService);
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   it('should be created', inject([PostsService], (service: PostsService) => {
@@ -24,7 +26,7 @@ describe('PostsService', () => {
   }));
 
   it('should have getData function', () => {
-    service = TestBed.get(PostsService);
+    service = TestBed.inject(PostsService);
     expect(service.reqPosts).toBeTruthy();
   });
 });
