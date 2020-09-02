@@ -1,3 +1,4 @@
+import { NovoPostComponent } from './pages/novo-post/novo-post.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'postagens',
     component: PostsComponent,
+  },
+  {
+    path: 'novoPost',
+    component: NovoPostComponent,
   },
 ];
 

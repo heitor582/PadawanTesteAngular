@@ -11,7 +11,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { TodosComponent } from './pages/todos/todos.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { MaterialModule } from './core/material.module';
+
 import { ThemeService } from './core/services/theme/theme.service';
+import { NovoPostComponent } from './pages/novo-post/novo-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { ThemeService } from './core/services/theme/theme.service';
     HomeComponent,
     TodosComponent,
     PostsComponent,
+    NovoPostComponent,
   ],
   imports: [
     MaterialModule,
@@ -29,6 +34,9 @@ import { ThemeService } from './core/services/theme/theme.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ThemeService
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent],
