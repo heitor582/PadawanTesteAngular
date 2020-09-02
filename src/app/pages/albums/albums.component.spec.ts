@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlbumsComponent } from './albums.component';
+import { By } from '@angular/platform-browser';
 
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
@@ -8,9 +9,8 @@ describe('AlbumsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlbumsComponent ]
-    })
-    .compileComponents();
+      declarations: [AlbumsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,10 @@ describe('AlbumsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create 100 albums cell', () => {
+    let cell = fixture.debugElement.query(By.css('.cell')).nativeElement;
+    expect(cell.length).toEqual(100);
   });
 });
