@@ -3,6 +3,7 @@ import { CommentsService } from './../../core/services/commentService/comment.se
 import CommentI from '../../core/models/comment.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class CommentsComponent implements OnInit {
   dataSource: MatTableDataSource<CommentI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator
+  @ViewChild(MatSort) sort: MatSort;
   constructor(private commentsService: CommentsService) {}
 
   ngOnInit(): void {
@@ -27,7 +29,7 @@ export class CommentsComponent implements OnInit {
     this.commentsService.reqComments().subscribe((comments) => {
       this.dataSource = new MatTableDataSource<CommentI>(comments);
       this.dataSource.paginator = this.paginator;
-
+      this.dataSource.sort = this.sort;
     })
   }
 

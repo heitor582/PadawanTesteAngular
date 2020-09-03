@@ -4,6 +4,7 @@ import PostsI from 'src/app/core/models/posts.model';
 import { PostsService } from './../../core/services/postsService/posts.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-posts',
@@ -15,7 +16,7 @@ export class PostsComponent implements OnInit {
   dataSource: MatTableDataSource<PostsI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  @ViewChild(MatSort) sort: MatSort;
   constructor(private postsService: PostsService, private route: Router) {}
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class PostsComponent implements OnInit {
     this.postsService.reqPosts().subscribe((posts) => {
       this.dataSource = new MatTableDataSource<PostsI>(posts);
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
   RouteNovoPost() {
