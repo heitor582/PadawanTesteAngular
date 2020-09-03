@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { TodoService } from '../../core/services/todoService/todo.service';
 import TodoI from '../../core/models/todo.model';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-todos',
@@ -8,12 +10,20 @@ import TodoI from '../../core/models/todo.model';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  todos: TodoI[];
+  displayedColumns: string[] = ['UserId', 'ID', 'Title', 'Completed'];
+  dataSource: MatTableDataSource<TodoI>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
+    this._getData();
+  }
+  _getData(): void {
     this.todoService.reqTodos().subscribe((todos) => {
-      this.todos = todos;
+      this.dataSource = new MatTableDataSource<TodoI>(todos);
+      this.dataSource.paginator = this.paginator;
     });
   }
 }

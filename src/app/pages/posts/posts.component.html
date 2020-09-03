@@ -1,15 +1,32 @@
 <mat-card>
-  <section class="table">
-    <button mat-button (click)="RouteNovoPost()">Novo Post</button>
-    <div *ngFor="let posts of posts" class="cell">
-      <div class="ids">
-        <label>userId: {{ posts.postId }}</label>
-        <label>Id: {{ posts.id }}</label>
-      </div>
-      <div class="body">
-        <h3>{{ posts.name | titlecase }}</h3>
-        <p>{{ posts.body }}</p>
-      </div>
-    </div>
-  </section>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="UserId">
+      <th mat-header-cell *matHeaderCellDef>UserId</th>
+      <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.title | titlecase }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Body">
+      <th mat-header-cell *matHeaderCellDef>Body</th>
+      <td mat-cell *matCellDef="let element">{{ element.body }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
 </mat-card>
