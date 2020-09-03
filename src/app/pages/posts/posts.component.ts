@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  displayedColumns: string[] = ['UserId', 'ID', 'Title', 'Body'];
+  displayedColumns: string[] = ['userId', 'id', 'title', 'body'];
   dataSource: MatTableDataSource<PostsI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -13,7 +13,7 @@ import { MatSort } from '@angular/material/sort';
 })
 
 export class CommentsComponent implements OnInit {
-  displayedColumns: string[] = ['postId', 'ID', 'name' , 'email' , 'body'];
+  displayedColumns: string[] = ['postId', 'id', 'name' , 'email' , 'body'];
   dataSource: MatTableDataSource<CommentI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator

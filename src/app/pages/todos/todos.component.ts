@@ -11,7 +11,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  displayedColumns: string[] = ['UserId', 'ID', 'Title', 'Completed'];
+  displayedColumns: string[] = ['userId', 'id', 'title', 'completed'];
   dataSource: MatTableDataSource<TodoI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

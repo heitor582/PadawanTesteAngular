@@ -11,7 +11,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./albums.component.scss'],
 })
 export class AlbumsComponent implements OnInit {
-  displayedColumns: string[] = ['UserId', 'ID', 'Title'];
+  displayedColumns: string[] = ['userId', 'id', 'title'];
   dataSource: MatTableDataSource<AlbumI>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
