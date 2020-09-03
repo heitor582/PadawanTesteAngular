@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../../services/theme/theme.service';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  isDarkTheme: Observable<boolean>;
-  constructor(private themeService: ThemeService) {}
 
-  ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
-  }
+  @Output()
+  readonly dark = new EventEmitter<boolean>();
+  constructor() {}
 
-  toggleDarkTheme(checked: boolean) {
-    this.themeService.setDarkTheme(checked);
+  ngOnInit() {}
+
+  toggleDarkTheme({ checked }: MatSlideToggleChange) {
+    this.dark.emit(checked);
   }
 }
