@@ -1,19 +1,34 @@
+import { Component, OnInit , ViewChild } from '@angular/core';
 import { CommentsService } from './../../core/services/commentService/comment.service';
-import { Component, OnInit } from '@angular/core';
 import CommentI from '../../core/models/comment.model';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss'],
 })
+
 export class CommentsComponent implements OnInit {
-  comments: CommentI[];
+  displayedColumns: string[] = ['postId', 'ID', 'name' , 'email' , 'body'];
+  dataSource: MatTableDataSource<CommentI>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator
   constructor(private commentsService: CommentsService) {}
 
   ngOnInit(): void {
-    this.commentsService.reqComments().subscribe((comments) => {
-      this.comments = comments;
-    });
+    this._getData();
   }
+
+
+  _getData(): void {
+    this.commentsService.reqComments().subscribe((comments) => {
+      this.dataSource = new MatTableDataSource<CommentI>(comments);
+      this.dataSource.paginator = this.paginator;
+
+    })
+  }
+
 }
