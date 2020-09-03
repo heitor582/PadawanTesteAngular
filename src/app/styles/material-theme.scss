@@ -1,6 +1,10 @@
-$dark-theme-primary-palette: mat-palette($mat-indigo);
-$dark-theme-accent-palette: mat-palette($mat-blue-gray, A200, A100, A400);
-$dark-theme-warn-palette: mat-palette($mat-red);
+$dark-theme-primary-palette: mat-palette($mat-yellow);
+$dark-theme-accent-palette: mat-palette($mat-gray);
+$dark-theme-warn-palette: mat-palette($mat-orange);
+
+$light-theme-primary-palette: mat-palette($mat-deep-orange);
+$light-theme-accent-palette: mat-palette($mat-gray);
+$light-theme-warn-palette: mat-palette($mat-green);
 
 $dark-theme: mat-dark-theme(
   $dark-theme-primary-palette,
@@ -9,9 +13,9 @@ $dark-theme: mat-dark-theme(
 );
 
 $light-theme: mat-light-theme(
-  $dark-theme-primary-palette,
-  $dark-theme-accent-palette,
-  $dark-theme-warn-palette
+  $light-theme-primary-palette,
+  $light-theme-accent-palette,
+  $light-theme-warn-palette
 );
 
 .theme-dark {
