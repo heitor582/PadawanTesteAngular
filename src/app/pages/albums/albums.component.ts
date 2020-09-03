@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlbumService } from '../../core/services/albumService/album.service';
 import AlbumI from '../../core/models/albums.model';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-albums',
@@ -8,13 +10,19 @@ import AlbumI from '../../core/models/albums.model';
   styleUrls: ['./albums.component.scss'],
 })
 export class AlbumsComponent implements OnInit {
-  albums: AlbumI[];
   displayedColumns: string[] = ['UserId', 'ID', 'Title'];
+  dataSource: MatTableDataSource<AlbumI>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private albumService: AlbumService) {}
 
   ngOnInit(): void {
+    this._getData();
+  }
+  _getData(): void {
     this.albumService.reqAlbums().subscribe((albums) => {
-      this.albums = albums;
+      this.dataSource = new MatTableDataSource<AlbumI>(albums);
+      this.dataSource.paginator = this.paginator;
     });
   }
 }
