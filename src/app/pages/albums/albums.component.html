@@ -1,13 +1,21 @@
 <mat-card>
-  <section class="table">
-    <div *ngFor="let albums of albums" class="cell">
-      <div class="ids">
-        <label>UserId: {{ albums.userId }}</label>
-        <label>Id: {{ albums.id }}</label>
-      </div>
-      <div class="body">
-        <h3>{{ albums.title | titlecase }}</h3>
-      </div>
-    </div>
-  </section>
+  <table mat-table [dataSource]="albums" class="mat-elevation-z8">
+    <ng-container matColumnDef="UserId">
+      <th mat-header-cell *matHeaderCellDef>UserId</th>
+      <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </mat-card>

@@ -1,23 +1,30 @@
 <!--<div class=.content>-->
 
+<mat-toolbar-row>
+  <mat-toolbar class="header mat-elevation-z4" color="primary">
     <mat-toolbar-row>
-<mat-toolbar class="header mat-elevation-z4" color="primary">
-  <mat-toolbar-row>
-  <a routerLink="/"> Menu <i class="material-icons">home</i> </a>
+      <a routerLink="/"> Menu <i class="material-icons">home</i> </a>
 
-  <a routerLink="/postagens">
-    Postagens <i class="material-icons">library_books</i>
-  </a>
+      <a routerLink="/postagens">
+        Postagens <i class="material-icons">library_books</i>
+      </a>
 
-  <a routerLink="/albums"> Albums <i class="material-icons">album</i> </a>
+      <a routerLink="/albums"> Albums <i class="material-icons">album</i> </a>
 
-  <a routerLink="/todos"> To-Do's <i class="material-icons">done_all</i> </a>
+      <a routerLink="/todos">
+        To-Do's <i class="material-icons">done_all</i>
+      </a>
 
-  <a routerLink="/comments">
-    Comments <i class="material-icons">feedback</i>
-  </a>
+      <a routerLink="/comments">
+        Comments <i class="material-icons">feedback</i>
+      </a>
 
-  <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">Dark theme</mat-slide-toggle>
-  </mat-toolbar-row>
-</mat-toolbar>
-<!--</div>-->
+      <mat-slide-toggle
+        [checked]="isDarkTheme | async"
+        (change)="toggleDarkTheme($event.checked)"
+        >Dark theme</mat-slide-toggle
+      >
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!--</div>-->
+</mat-toolbar-row>
