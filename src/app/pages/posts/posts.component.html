@@ -1,4 +1,14 @@
 <mat-card>
+  <mat-form-field appearance="outline">
+    <mat-label>Filtrar</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="tipo=texto"
+      (change)="filtro($event)"
+    />
+  </mat-form-field>
+
   <button mat-flat-button (click)="RouteNovoPost()">Novo Post</button>
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="userId">
