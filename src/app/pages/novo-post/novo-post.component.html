@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card id="mat-card">
   <form [formGroup]="postForm" (submit)="onSubmit()">
     <mat-form-field appearance="outline">
       <mat-label>UserId</mat-label>
@@ -12,7 +12,9 @@
       <mat-label>Body</mat-label>
       <input matInput formControlName="body" />
     </mat-form-field>
-    <button mat-button type="submit">Cadastrar Produto</button>
-    <button mat-button (click)="cancelarCadastro()">Cancelar</button>
+    <div class="buttons-container">
+    <button mat-raised-button type="submit" class="register">Cadastrar Post</button>
+    <button mat-raised-button (click)="cancelarCadastro()" class="cancel">Cancelar</button>
+    </div>
   </form>
 </mat-card>
