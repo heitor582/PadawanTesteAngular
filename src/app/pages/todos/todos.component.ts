@@ -21,11 +21,15 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this._getData();
   }
-  _getData(): void {
-    this.todoService.reqTodos().subscribe((todos) => {
+  _getData(filtro?: string): void {
+    this.todoService.reqTodos(filtro).subscribe((todos) => {
       this.dataSource = new MatTableDataSource<TodoI>(todos);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+  }
+
+  filtro(e: any) {
+    this._getData(e.target.value);
   }
 }

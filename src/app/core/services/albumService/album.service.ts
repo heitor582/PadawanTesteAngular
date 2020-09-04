@@ -10,7 +10,8 @@ import { environment } from '../../../../environments/environment';
 export class AlbumService {
   baseUrl = `${environment.API_SERVER}/albums`;
   constructor(private http: HttpClient) {}
-  reqAlbums(): Observable<AlbumI[]> {
-    return this.http.get<AlbumI[]>(this.baseUrl);
+  reqAlbums(filtro?:string): Observable<AlbumI[]> {
+    if(filtro === undefined) return this.http.get<AlbumI[]>(this.baseUrl);
+    return this.http.get<AlbumI[]>(this.baseUrl + `?${filtro}`);
   }
 }

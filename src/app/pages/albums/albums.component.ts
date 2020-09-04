@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
 import { AlbumService } from '../../core/services/albumService/album.service';
 import AlbumI from '../../core/models/albums.model';
 import { MatTableDataSource } from '@angular/material/table';
@@ -21,11 +21,15 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this._getData();
   }
-  _getData(): void {
-    this.albumService.reqAlbums().subscribe((albums) => {
+  _getData(filtro?: string): void {
+    this.albumService.reqAlbums(filtro).subscribe((albums) => {
       this.dataSource = new MatTableDataSource<AlbumI>(albums);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+  }
+
+  filtro(e: any) {
+    this._getData(e.target.value);
   }
 }
