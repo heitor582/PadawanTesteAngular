@@ -2,5 +2,9 @@
   display: flex;
   justify-content: space-around;
   text-decoration: none;
-  padding: 0px;
+  padding: 0px !important;
+}
+
+.oi .header a {
+  text-decoration: none;
 }

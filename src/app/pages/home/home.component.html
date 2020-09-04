@@ -1,27 +1,21 @@
-<mat-card class="matcard">
+<body id="block">
   <div id="container">
-  <span class="posts" color="primary">
-    <a routerLink="/postagens">
+    <button mat-raised-button color="primary" (click)="navigateTol('postagens')" class="buttons">
       Postagens <i class="material-icons">arrow_right_alt</i>
-    </a>
-  </span>
+  </button>
 
-  <span>
-    <a routerLink="/albums">
+  <button mat-raised-button color="primary" (click)="navigateTol('albums')" class="buttons">
       Albums <i class="material-icons">arrow_right_alt</i>
-    </a>
-  </span>
+  </button>
 
-  <span>
-    <a routerLink="/todos">
+  <button mat-raised-button color="primary" (click)="navigateTol('todos')" class="buttons">
       To-Do's <i class="material-icons">arrow_right_alt</i>
-    </a>
-  </span>
-  <span>
-    <a routerLink="/comments">
-      Comments <i class="material-icons">arrow_right_alt</i>
-    </a>
+  </button>
 
-  </span>
+  <button mat-raised-button color="primary" (click)="navigateTol('comments')" class="buttons">
+      Comments <i class="material-icons">arrow_right_alt</i>
+  </button>
+
   </div>
-</mat-card>
+
+</body>
