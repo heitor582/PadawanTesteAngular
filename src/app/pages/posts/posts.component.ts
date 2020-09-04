@@ -22,13 +22,18 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
     this._getData();
   }
-  _getData() {
-    this.postsService.reqPosts().subscribe((posts) => {
+  _getData(filtro?: string) {
+    this.postsService.reqPosts(filtro).subscribe((posts) => {
       this.dataSource = new MatTableDataSource<PostsI>(posts);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
   }
+
+  filtro(e: any) {
+    this._getData(e.target.value);
+  }
+
   RouteNovoPost() {
     this.route.navigateByUrl('/novoPost');
   }

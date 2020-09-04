@@ -10,7 +10,8 @@ import { environment } from '../../../../environments/environment';
 export class CommentsService {
   baseUrl = `${environment.API_SERVER}/comments`;
   constructor(private http: HttpClient) {}
-  reqComments(): Observable<CommentI[]> {
-    return this.http.get<CommentI[]>(this.baseUrl);
+  reqComments(filtro?:string): Observable<CommentI[]> {
+    if(filtro === undefined) return this.http.get<CommentI[]>(this.baseUrl);
+    return this.http.get<CommentI[]>(this.baseUrl + `?${filtro}`);
   }
 }
