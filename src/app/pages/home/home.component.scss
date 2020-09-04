@@ -1,17 +1,6 @@
-::ng-deep.theme-light .mat-card {
+#block  {
   background: #F0F0F7;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.matcard {
-  height: 100%;
-}
-
-::ng-deep.theme-dark .mat-card {
-  background: #F0F0F7;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -20,22 +9,6 @@
 .mat-card {
   background: #f0f0f7;
   height: 100%;
-}
-
-#container  a  {
-  box-shadow:inset 0px 1px 0px 0px #cf866c;
-	background: deep-orange;
-	background-color:#d0451b;
-	border-radius:5px;
-	border: 1px solid #942911;
-	display: flex;
-	cursor:pointer;
-	color:#ffffff;
-	font-size: 25px;
-	padding:20px 24px;
-	text-decoration:none;
-  text-shadow:0px 1px 0px #854629;
-  margin: 3rem;
 }
 
 #container .posts a {
@@ -47,3 +20,18 @@
 font-size: 25px;
 border-radius: 5px;
 }
+
+.buttons {
+  display: flex;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: .8rem;
+  font-size: 18px;
+}
+
+.buttons .material-icons {
+  padding: 1rem;
+  font-size: 30px;
+}
+
+
